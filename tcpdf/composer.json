@@ -1,0 +1,6 @@
+{ 
+"name": ”nombre_desarrollador/nombre_proyecto", 
+"require": { 
+		"phpmailer/phpmailer": "5.2.*" 
+		} 
+}
