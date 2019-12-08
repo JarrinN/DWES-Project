@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio 24</title>
+    <title>Registro Teatro</title>
 </head>
 <body>
     <?php
@@ -32,5 +32,6 @@
         <br>
         <input type="submit" value="Registrarme" name="enviar" />
     </form>
+    <p><a href="teatrologin.php">¡Ya estoy registrad@!</a></p>
 </body>
 </html>
