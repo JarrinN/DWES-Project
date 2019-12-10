@@ -15,6 +15,9 @@
     $sesion = $_GET['sesion'];
     $fila = $_GET['fila'];
     $silla = $_GET['silla'];
+
+    $trueFila = $fila + 1;
+    $trueSilla = $silla + 1;
     
     $html = '
     <img src="imagenes/ticket1.png" alt="ticket" width="280" height="210" />
@@ -26,11 +29,11 @@
         </tr>
         <tr>
             <td><b>FILA</b></td>
-            <td>'.$fila.'</td>
+            <td>'.$trueFila.'</td>
         </tr>
         <tr>
             <td><b>SILLA</b></td>
-            <td>'.$silla.'</td>
+            <td>'.$trueSilla.'</td>
         </tr>
         <tr>
             <td class="doble"><i>Presenta esta entrada en taquilla</i></td>

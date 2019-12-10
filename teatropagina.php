@@ -35,18 +35,18 @@
     <br>
 <?php
     $tipoImg = ''; //tipo de imagen
-    $y = 1; //fila
+    $y = 0; //fila
     $posicion = 0; //posicion de la silla
     echo "<table style='border-collapse: collapse; border: none;'>"; //tabla de sillas
-    while($y <= 5){
+    while($y < 5){
         echo "<tr>";
-            $x = 1; //celda
-            while($x <= 10){
+            $x = 0; //celda
+            while($x < 10){
                 //si la posicion del array es 0 la silla estará ocupada
                 if($arraySillas[$posicion] == '0'){
                     $tipoImg = "<img src='imagenes/sillaocupada.jpg' alt='ocupada'/>";
                 }else { //si no, estará libre
-                    $tipoImg = "<a href='teatrocomprada.php?sesion=".$tituloSesion."&fila=".$y."&silla=".$x."&posicion=".$posicion."'><img src='imagenes/sillalibre.jpg' alt='libre'/></a>";
+                    $tipoImg = "<a href='teatrocomprada.php?sesion=".$tituloSesion."&fila=".$y."&silla=".$x."'><img src='imagenes/sillalibre.jpg' alt='libre'/></a>";
                 }
                 echo "<td>".$tipoImg."</td>";
                 $x++;
