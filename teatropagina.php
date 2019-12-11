@@ -14,18 +14,18 @@
     <h1>Comprar Entrada</h1>
 <?php
     //sesion sera igual al select
-    $_GET['sesion'] = $_POST['sesiones'];
     $tituloSesion = 'matinal'; //titulo default
-    if(isset($_POST['cambiar'])){
+    if(isset($_GET['cambiar'])){
+        $_GET['sesion'] = $_GET['sesiones'];
         //si se completa el form la sesion cambiara
         $tituloSesion = $_GET['sesion'];
         echo "<h2>SESIÓN: ". $tituloSesion ."</h2>";
         
     }else{
-        echo "<h2>SESIÓN: ". $tituloSesion ."</h2>";
+        echo "<h2>SESIÓN: ". $_GET['sesion'] ."</h2>";
     }
 
-    $sql = "SELECT disponibilidadSillas FROM sesiones WHERE sesion = '$tituloSesion'";
+    $sql = "SELECT disponibilidadSillas FROM sesiones WHERE sesion = '".$_GET['sesion']."'";
     $consulta = $conexion->query($sql);
     $sillas = $consulta->fetch_assoc();
 
@@ -57,7 +57,7 @@
     }
     echo "</table>";
 ?>
-    <form action="teatropagina.php?sesion=<?php echo $_GET['sesion'];?>" method="post">
+    <form action="teatropagina.php?sesion=<?php echo $_GET['sesion'];?>" method="get">
         <select name="sesiones">
             <option value="matinal" <?php if($_GET['sesion'] == 'matinal') echo "selected='selected'";?>>Matinal</option>
             <option value="tarde" <?php if($_GET['sesion'] == 'tarde') echo "selected='selected'";?>>Tarde</option>

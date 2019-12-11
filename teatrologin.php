@@ -13,7 +13,7 @@
         if($resultado != null)
         {
             $_SESSION['user'] = $resultado['usuario'];
-            header("Location:teatropagina.php");
+            header("Location:teatropagina.php?sesion=matinal");
         }
     }
 ?>
@@ -29,7 +29,7 @@
    <?php 
         if(isset($_SESSION['user']))
         {
-            header("Location:teatropagina.php");
+            header("Location:teatropagina.php?sesion=matinal");
         } 
         else 
         { 
